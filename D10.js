@@ -171,7 +171,7 @@ console.log(onlyLetters("3I 2ha234ve 4 do3g23s43476"));
 console.log(
   "\n--------------------------------------------Esercizio 6--------------------------------------------\n"
 );
-const isThisAnEmail = (str) => str.includes("@gmail.com");
+const isThisAnEmail = (str) => str.includes("@") && str.includes(".com");
 console.log(isThisAnEmail("aaaaa@gmail.com"));
 console.log(isThisAnEmail("aaaaa@gmaiom"));
 console.log(isThisAnEmail("aaaaagmail.com"));
@@ -404,17 +404,12 @@ const oggettoProva = {
   key3: "contenuto3",
   key4: "contenuto4",
 };
-// const deleteProp = (obj, prop) => delete obj.prop;
-const deleteProp = (obj, prop) => ({ prop, ...rest } = obj);
+const deleteProp = (obj, prop) => delete obj[prop];
 
 console.log(deleteProp(oggettoProva, "key2"));
 console.log(oggettoProva);
-Reflect.deleteProperty(oggettoProva, "key3");
-console.log(oggettoProva);
-// // console.log(obj);
-// // console.log(prop);
-// // const index = obj.indexOf(prop);
-// // obj.splice(index, 1);
+// Reflect.deleteProperty(oggettoProva, "key3");
+// console.log(oggettoProva);
 
 // /* ESERCIZIO 12
 //   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
